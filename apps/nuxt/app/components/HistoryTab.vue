@@ -11,9 +11,6 @@ const emit = defineEmits<{
   (e: 'relaunch', query: string): void
 }>()
 
-function formatDate(date: string) {
-  return new Date(date).toLocaleString()
-}
 </script>
 
 <template>
