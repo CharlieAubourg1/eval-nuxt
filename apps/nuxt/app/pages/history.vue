@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Offer } from '~/composables/useOffers'
-import { FunnelIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const offers = ref<Offer[]>([])
 const isLoading = ref(true)
