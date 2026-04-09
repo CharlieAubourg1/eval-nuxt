@@ -61,6 +61,13 @@
       "startDate": "2024-10-01"
     }
   ],
-  "favorites": []
+  "favorites": [],
+  "history": [
+    {
+      "id": 1,
+      "body": "développement web",
+      "timestamp": "2026-04-09 2:39PM"
+    }
+  ]
 }
 
