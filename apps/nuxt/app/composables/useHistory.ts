@@ -62,15 +62,4 @@ export async function getHistory(): Promise<History[]> {
  * La recherche est server-side (json-server), sans filtrage local.
  * @throws {HistoryError} en cas d'erreur réseau ou API
  */
-export async function searchHistory(query: string): Promise<History[]> {
-  const trimmedQuery = query.trim()
-  if (!trimmedQuery) {
-    return getHistory()
-  }
 
-  const config = useRuntimeConfig()
-  const base = config.public.apiBase as string
-  const url = `${base.replace(/\/$/, '')}/history?q=${encodeURIComponent(trimmedQuery)}`
-
-  
-}
