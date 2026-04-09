@@ -32,13 +32,6 @@ async function loadOffers() {
   }
 }
 
-function handleSearch(q: string) {
-  router.push({ path: '/results', query: { q } })
-}
-
-function clearSearch() {
-  router.push({ path: '/results' })
-}
 
 watch(
   () => currentQuery.value,
