@@ -2,11 +2,6 @@
 import type { Offer } from '~/composables/useOffers'
 import { FunnelIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
-useSeoMeta({
-  title: 'Offres de stage',
-  description: 'Recherchez et parcourez les offres de stage disponibles.',
-})
-
 const offers = ref<Offer[]>([])
 const isLoading = ref(true)
 const isError = ref(false)
