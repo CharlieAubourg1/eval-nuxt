@@ -60,12 +60,12 @@ watch(
     <div class="container mx-auto px-4 py-12">
       <!-- Header Section -->
       <div class="text-center mb-10">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Offres de stage</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Historique de recherche</h1>
         <p v-if="currentQuery.trim()" class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
           Résultats pour : <span class="font-semibold text-blue-600">"{{ currentQuery }}"</span>
         </p>
         <p v-else class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-          Toutes les offres disponibles
+          Historique
         </p>
         <!-- Barre de recherche -->
         <div class="mb-6">

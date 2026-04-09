@@ -35,6 +35,14 @@ function handleLogout() {
             Offres
           </NuxtLink>
 
+          <NuxtLink
+            to="/history"
+            class="px-4 py-2 rounded-lg hover:bg-white/10 transition-colors font-medium"
+            active-class="bg-white/20"
+          >
+            Historique
+          </NuxtLink>
+
           <!-- État connecté : email + déconnexion -->
           <template v-if="authUser">
             <span class="px-3 py-1 text-sm text-blue-100">{{ authUser.email }}</span>
