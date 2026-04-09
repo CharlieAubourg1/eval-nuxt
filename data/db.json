@@ -64,15 +64,14 @@
   "favorites": [],
   "history": [
     {
-      "id": 1,
-      "body": "développement web",
-      "timestamp": "2026-04-09 2:39PM"
+      "body": "Data",
+      "timestamp": "2026-04-09T13:21:56.847Z",
+      "id": 3
     },
     {
-      "id": 2,
-      "body": "data analyst",
-      "timestamp": "2026-04-09 3:11PM"
+      "body": "Developpement",
+      "timestamp": "2026-04-09T13:23:18.945Z",
+      "id": 4
     }
   ]
 }
-
