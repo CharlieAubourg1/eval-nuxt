@@ -2,4 +2,4 @@
 
 Groupe : AUBOURG Charlie - BRUNETON Paul  
 
-Sujet choisi : A (historique des recherches)
+Sujet A (historique des recherches)
