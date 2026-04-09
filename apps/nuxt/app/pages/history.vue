@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Offer } from '~/composables/useOffers'
+import type { History } from '~/composables/useHistory'
 
-const offers = ref<Offer[]>([])
+const history = ref<History[]>([])
 const isLoading = ref(true)
 const isError = ref(false)
 const errorMessage = ref('')
@@ -15,17 +15,17 @@ const currentQuery = computed(() => {
   return typeof q === 'string' ? q : ''
 })
 
-async function loadOffers() {
+async function loadHistory() {
   const q = currentQuery.value.trim()
   isLoading.value = true
   isError.value = false
   errorMessage.value = ''
   try {
-    offers.value = q ? await searchOffers(q) : await getOffers()
+    history.value = q ? await searchHistory(q) : await getHistory()
   } catch (e: unknown) {
     const err = e as { error?: string }
     isError.value = true
-    errorMessage.value = err?.error ?? 'Erreur lors du chargement des offres'
+    errorMessage.value = err?.error ?? "Erreur lors du chargement de l'historique"
   } finally {
     isLoading.value = false
   }
@@ -36,7 +36,7 @@ watch(
   () => currentQuery.value,
   (q) => {
     searchInput.value = q
-    loadOffers()
+    loadHistory()
   },
   { immediate: true },
 )
@@ -65,7 +65,7 @@ watch(
         <button
           type="button"
           class="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-          @click="loadOffers"
+          @click="loadHistory"
         >
           Réessayer
         </button>
