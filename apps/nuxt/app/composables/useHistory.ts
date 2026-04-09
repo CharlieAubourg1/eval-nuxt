@@ -1,6 +1,29 @@
 // TODO : check if last part necessary
 
+////
+export async function addHistory(body: string): Promise<History> {
+  const trimmed = body.trim()
+  if (!trimmed) throw new Error("Recherche vide")
 
+  const config = useRuntimeConfig()
+  const base = config.public.apiBase as string
+  const url = `${base.replace(/\/$/, '')}/history`
+
+  try {
+    return await $fetch<History>(url, {
+      method: 'POST',
+      body: {
+        body: trimmed,
+        timestamp: new Date().toISOString(),
+      },
+    })
+  } catch (e: unknown) {
+    throw {
+      error: "Erreur lors de l'ajout à l'historique",
+    } as HistoryError
+  }
+}
+////
 export interface History {
   id: number
   body: string
