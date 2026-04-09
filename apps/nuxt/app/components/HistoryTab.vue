@@ -21,8 +21,12 @@ const emit = defineEmits<{
       class="flex flex-col cursor-pointer"
       @click="emit('relaunch', h.body)"
     >
-      <p class="text-lg font-semibold text-gray-900">
+      <p class="text-md font-semibold text-gray-700">
         "{{ h.body }}"
+      </p>
+
+      <p class="text-md font-semibold text-gray-700">
+        "{{ h.timestamp }}"
       </p>
     </div>
 
