@@ -31,7 +31,6 @@ async function loadHistory() {
   }
 }
 
-
 watch(
   () => currentQuery.value,
   (q) => {

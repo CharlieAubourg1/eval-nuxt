@@ -45,6 +45,12 @@ function clearSearch() {
   router.push({ path: '/results' })
 }
 
+/*
+function trasmitSearch() {
+  router.push({ path: '/history' })
+}
+*/
+
 watch(
   () => currentQuery.value,
   (q) => {
