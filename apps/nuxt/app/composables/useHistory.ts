@@ -72,14 +72,5 @@ export async function searchHistory(query: string): Promise<History[]> {
   const base = config.public.apiBase as string
   const url = `${base.replace(/\/$/, '')}/history?q=${encodeURIComponent(trimmedQuery)}`
 
-  try {
-    const data = await $fetch<History[]>(url)
-    return Array.isArray(data) ? data : []
-  } catch (e: unknown) {
-    const err = e as { data?: { error?: string }; statusCode?: number }
-    throw {
-      error: err?.data?.error ?? (e instanceof Error ? e.message : 'Erreur lors de la recherche des offres'),
-      status: err?.statusCode,
-    } as HistoryError
-  }
+  
 }
