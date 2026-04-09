@@ -1,20 +1,43 @@
 <script setup lang="ts">
 import type { History } from '~/composables/useHistory'
+import { XMarkIcon } from '@heroicons/vue/24/outline'
 
-defineProps<{
+const props = defineProps<{
   h: History
 }>()
+
+const emit = defineEmits<{
+  (e: 'delete', id: number): void
+  (e: 'relaunch', query: string): void
+}>()
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleString()
+}
 </script>
 
 <template>
-  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow flex">
-    <p class="text-xl font-bold text-gray-900 mb-2">{{ h.id }}</p>
-    <p class="text-gray-600 mb-1">{{ h.body }}</p>
-    <p class="text-gray-500 text-sm mb-2">{{ h.timestamp }}</p>
-    <!-- <span
-      class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+  <div
+    class="w-full bg-white rounded-lg shadow-md px-6 py-4 hover:shadow-lg transition-all flex items-center justify-between"
+  >
+    <!-- Partie gauche (texte cliquable) -->
+    <div
+      class="flex flex-col cursor-pointer"
+      @click="emit('relaunch', h.body)"
     >
-      {{ h.type }}
-    </span> -->
+      <p class="text-lg font-semibold text-gray-900">
+        "{{ h.body }}"
+      </p>
+    </div>
+
+    <!-- Croix supprimer -->
+    <button
+      class="p-2 rounded-full hover:bg-red-100 transition group"
+      @click.stop="emit('delete', h.id)"
+    >
+      <XMarkIcon
+        class="h-5 w-5 text-gray-400 group-hover:text-red-600"
+      />
+    </button>
   </div>
-</template>
+</template> 
