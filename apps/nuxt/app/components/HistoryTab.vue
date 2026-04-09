@@ -20,7 +20,6 @@ function formatDate(date: string) {
   <div
     class="w-full bg-white rounded-lg shadow-md px-6 py-4 hover:shadow-lg transition-all flex items-center justify-between"
   >
-    <!-- Partie gauche (texte cliquable) -->
     <div
       class="flex flex-col cursor-pointer"
       @click="emit('relaunch', h.body)"
@@ -30,7 +29,7 @@ function formatDate(date: string) {
       </p>
     </div>
 
-    <!-- Croix supprimer -->
+
     <button
       class="p-2 rounded-full hover:bg-red-100 transition group"
       @click.stop="emit('delete', h.id)"
