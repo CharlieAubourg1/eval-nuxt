@@ -74,7 +74,6 @@ watch(
 
       <!-- Nombre de résultats liste de recherches effectuées -->
       <div>
-        <p>test</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <HistoryTab v-for="h in history" :key="h.id" :h="h" />
         </div>
