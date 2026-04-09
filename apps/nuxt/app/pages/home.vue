@@ -2,19 +2,17 @@
 // Page d'accueil : route /home.
 // Contenu et design alignés sur l'app Vue.
 // La recherche navigue vers /results?q=... (Story 3.4).
+
 import { MagnifyingGlassIcon, StarIcon, ChartBarIcon } from '@heroicons/vue/24/outline'
+
 
 useSeoMeta({
   title: 'Accueil',
   description: 'Trouvez votre stage idéal : recherche d’offres et parcours simple.',
 })
 
-const searchInput = ref('')
+const router = useRouter() 
 
-const router = useRouter()
-function handleSearch(q: string) {
-  router.push({ path: '/results', query: { q } })
-}
 </script>
 
 <template>
@@ -32,8 +30,7 @@ function handleSearch(q: string) {
     </div>
 
     <!-- Barre de recherche (auto-import SearchBar depuis app/components/) -->
-    <SearchBar v-model="searchInput" @search="handleSearch" />
-
+  
     <!-- Lien vers la page des offres (story 3-3, Task 5) -->
     <NuxtLink
       to="/results"
