@@ -7,8 +7,8 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-    <h3 class="text-xl font-bold text-gray-900 mb-2">{{ h.id }}</h3>
+  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow flex">
+    <p class="text-xl font-bold text-gray-900 mb-2">{{ h.id }}</p>
     <p class="text-gray-600 mb-1">{{ h.body }}</p>
     <p class="text-gray-500 text-sm mb-2">{{ h.timestamp }}</p>
     <!-- <span
