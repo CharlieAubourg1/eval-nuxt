@@ -3,6 +3,21 @@
 // Contenu et design alignés sur l'app Vue.
 // La recherche navigue vers /results?q=... (Story 3.4).
 import { MagnifyingGlassIcon, StarIcon, ChartBarIcon } from '@heroicons/vue/24/outline'
+import { addHistory } from '~/composables/useHistory'
+
+async function handleSearch(q: string) {
+  const trimmed = q.trim()
+
+  if (!trimmed) return
+
+  try {
+    await addHistory(trimmed) // 🔥 AJOUT ICI
+  } catch (e) {
+    console.error("Erreur historique", e)
+  }
+
+  router.push({ path: '/results', query: { q: trimmed } })
+}
 
 useSeoMeta({
   title: 'Accueil',
@@ -12,9 +27,7 @@ useSeoMeta({
 const searchInput = ref('')
 
 const router = useRouter()
-function handleSearch(q: string) {
-  router.push({ path: '/results', query: { q } })
-}
+
 </script>
 
 <template>
@@ -41,6 +54,7 @@ function handleSearch(q: string) {
     >
       Voir toutes les offres
     </NuxtLink>
+    
 
     <!-- Section informations : 3 blocs avec Heroicons (AC #3, #7) -->
     <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
