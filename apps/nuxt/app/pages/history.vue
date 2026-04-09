@@ -64,13 +64,14 @@ watch(
         <p v-if="currentQuery.trim()" class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
           Résultats pour : <span class="font-semibold text-blue-600">"{{ currentQuery }}"</span>
         </p>
-        <p v-else class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+        <!-- <p v-else class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
           Historique
-        </p>
-        <!-- Barre de recherche -->
+        </p> -->
+        <!-- Barre de recherche
         <div class="mb-6">
           <SearchBar v-model="searchInput" @search="handleSearch" />
         </div>
+        -->
         <!-- Badge de recherche active avec bouton de reset -->
         <div v-if="currentQuery.trim()" class="flex justify-center mb-6">
           <div
@@ -126,13 +127,16 @@ watch(
 
       <!-- Nombre de résultats et grille de cartes -->
       <div v-else>
+        <!--
         <p class="text-gray-600 text-sm mb-6 text-center">
           <span class="font-semibold text-gray-900">{{ offers.length }}</span>
           {{ offers.length === 1 ? 'résultat trouvé' : 'résultats trouvés' }}
         </p>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <OfferCard v-for="offer in offers" :key="offer.id" :offer="offer" />
         </div>
+        -->
       </div>
     </div>
   </div>
