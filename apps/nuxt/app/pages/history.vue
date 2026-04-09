@@ -14,7 +14,7 @@ const currentQuery = computed(() => {
   const q = route.query.q
   return typeof q === 'string' ? q : ''
 })
-////
+
 async function loadHistory() {
   const q = currentQuery.value.trim()
   isLoading.value = true
@@ -30,7 +30,7 @@ async function loadHistory() {
     isLoading.value = false
   }
 }
-/////
+
 watch(
   () => currentQuery.value,
   (q) => {
@@ -69,7 +69,6 @@ watch(
           Réessayer
         </button>
       </div>
-
 
       <!-- Nombre de résultats liste de recherches effectuées -->
       <div>

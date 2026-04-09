@@ -1,6 +1,3 @@
-// TODO : check if last part necessary
-
-////
 export async function addHistory(body: string): Promise<History> {
   const trimmed = body.trim()
   if (!trimmed) throw new Error("Recherche vide")
@@ -23,7 +20,7 @@ export async function addHistory(body: string): Promise<History> {
     } as HistoryError
   }
 }
-////
+
 export interface History {
   id: number
   body: string
